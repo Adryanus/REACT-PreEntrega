@@ -1,11 +1,12 @@
 import { Nav } from "../Nav/Nav";
 import "./Header.css";
+import logo from "/public/images/LogoDB.jpg";
 export const Header = () => {
   return (
     <header>
       <a href="/" className="logo-link">
     <img
-          src="/public/images/LogoDB.jpg"
+          src={logo}
           alt="Logo de DB Electrónica"
           className="logo"
         />
