@@ -39,7 +39,7 @@ const SobreNosotros = ({ className = "" }) => {
 
       {/* Contenedor centrado para el botón */}
       <div className="sn-cta">
-        <a href="/contacto" className="sn-button" aria-label="Contactar">
+        <a href="/contact" className="sn-button" aria-label="Contactar">
           Contactanos
         </a>
       </div>

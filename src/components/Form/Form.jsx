@@ -1,62 +1,82 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "./Form.css";
 
 const Form = () => {
-  const [user, setUser] = useState({
-    name: "",
+  const [formData, setFormData] = useState({
+    nombre: "",
     email: "",
-    pass: "",
+    telefono: "",
+    comentario: "",
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    //Forma de actualizar un estado de forma directa:
-    setUser({ ...user, [name]: value });
-
-    /*Forma de actualizar un estado con el valor "previo" a mi actualizacion: por convencion, se le llama "prev" o "prevEstado"
-    Esta forma utiliza una funcion con un parametro que siempre traera el ultimo valor del estado
-    antes de actualizar con lo nuevo*/
-
-    //setUser((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    alert(`${user.name} ingreso su correo y contraseña`);
-
-    //reseteamos los campos que tomaran los values de los inputs
-    setUser({ name: "", email: "", pass: "" });
+    console.log("Datos enviados:", formData);
+    alert("Gracias por tu consulta. Te responderemos a la brevedad.");
+    setFormData({ nombre: "", email: "", telefono: "", comentario: "" });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name" //necesitamos el atributo name
-        value={user.name}
-        onChange={handleChange}
-        placeholder="Ingresa tu nombre"
-        required
-      />
-      <input
-        type="email"
-        name="email" //necesitamos el atributo name
-        value={user.email}
-        onChange={handleChange}
-        placeholder="Ingresa tu email"
-        required
-      />
-      <input
-        type="password"
-        name="pass" //necesitamos el atributo name
-        value={user.pass}
-        onChange={handleChange}
-        placeholder="Ingresa contraseña"
-        required
-      />
-      <button type="submit">Enviar</button>
-    </form>
+    <section className="form-container">
+      <h2 className="form-title">Contáctanos</h2>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="telefono">Teléfono</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="comentario">Comentario o consulta</label>
+          <textarea
+            id="comentario"
+            name="comentario"
+            rows="5"
+            value={formData.comentario}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" className="form-button">
+          Enviar
+        </button>
+      </form>
+    </section>
   );
 };
 
