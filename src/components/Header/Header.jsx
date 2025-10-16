@@ -5,7 +5,7 @@ export const Header = () => {
     <header>
       <a href="/" className="logo-link">
     <img
-          src="/public/images/logoDB.jpg"
+          src="/public/images/LogoDB.jpg"
           alt="Logo de DB Electrónica"
           className="logo"
         />
