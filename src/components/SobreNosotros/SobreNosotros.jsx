@@ -10,7 +10,7 @@ const SobreNosotros = ({ className = "" }) => {
 
       {/* Encabezado con logo y título */}
       <div className="sn-header">
-        <img src="/public/images/LogoDB.jpg" alt="Logo DBTecnologia" className="sn-logo" />
+        <img src="/images/LogoDB.jpg" alt="Logo DBTecnologia" className="sn-logo" />
         <div>
           <h2 id="sobre-nosotros-title" className="sn-title">
             30 Años de Tecnología, Confianza e Innovación
