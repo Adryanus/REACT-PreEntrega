@@ -16,13 +16,10 @@ function App() {
         <div>
           <Header />
           <Routes>
-            <Route
-              path="/"
-              element={<ItemListContainer titulo={"Bienvenidos a DB Tecnología"} />}
-            />
+            <Route path="/" element={<ItemListContainer titulo={"Bienvenidos a DB Tecnología"} />} />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />
-          <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-          <Route path="/contact" element={<Contact />} />
+            <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           
           
