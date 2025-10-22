@@ -7,7 +7,7 @@ export const ItemDetail = ({ detail }) => {
   const handleadd = (quantity) => { addItem({...detail, quantity});}
   return (  
     <Item {...detail}>
-      <Count btntext="Agregar al carrito" onConfirm={handleadd} />
+      <Count btnText="Agregar al carrito" onConfirm={handleadd} />
     </Item>
   );
 };
