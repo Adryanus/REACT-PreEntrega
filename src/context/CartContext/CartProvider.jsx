@@ -11,22 +11,35 @@ export const CartProvider = ({ children }) => {
 
     const addItem = (item) => {
         if (exists(item.id)) {
-            alert('El producto ya fue agregado al carrito');
-            return;
+            const updatedCart = cart.map((product) => {
+                if (product.id === item.id) {
+                    return { ...product, quantity: product.quantity + item.quantity };} 
+                else {
+                return product;}
+            });
+            setCart(updatedCart);
+            alert(`Agregado a carrito`);}
+            
+        else {setCart([...cart,item]);
+                alert("${item.name} Agregado al carrito");}
         }
-        setCart([...cart, item]);
-        alert(`${item.name} Agregado al carrito`);
-    };
-
+    
+    
+    const deleteItem = (id) => {
+        const filtered = cart.filter((product) => product.id !== id);
+        setCart(filtered);
+        alert(`Producto eliminado del carrito`); };
+    
     const clearCart=() => {
-        setCart([]);
-    }
+        setCart([]);}
 
     const getTotalItems=() => {
-        if (cart.length) {return cart.length}
-    }
+        const totalItems= cart.reduce((acc, item) => acc + item.quantity, 0);
+        return totalItems;};
     
-    return (
-        <CartContext.Provider value={ {cart, addItem, clearCart, getTotalItems} }> {children}</CartContext.Provider>
-    );
-};
+    const total =() => {
+        const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        return Math.round(total*100)/100;}
+    
+    const values = { cart, addItem, deleteItem, clearCart, getTotalItems, total };
+    return <CartContext.Provider value={values}>{children}</CartContext.Provider>;}
