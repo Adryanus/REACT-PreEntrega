@@ -18,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer titulo={"Bienvenidos a DB Tecnología"} />} />
             <Route path="/detail/:id" element={<ItemDetailContainer />} />
+            <Route path="/category/:category" element={<ItemListContainer titulo="Productos por categoría" />}/>
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/carrito" element={<h1>Carrito de Compras</h1>} />
