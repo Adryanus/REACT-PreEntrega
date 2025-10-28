@@ -1,7 +1,8 @@
-/* Cart.css */
+/* Cart.css - versión profesional */
 
 .itemListContainer {
   padding: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
 .total-pagar {
@@ -13,97 +14,120 @@
 
 .total-pagar h3 {
   margin: 0;
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .total-pagar .btn {
   margin-left: 10px;
-  padding: 8px 12px;
+  padding: 10px 16px;
   cursor: pointer;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   border: none;
   color: white;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .total-pagar .btn:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .cart-items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  align-items: stretch; /* hace que las tarjetas tengan altura igual */
+  align-items: stretch;
 }
 
 .cart-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* distribuye contenido verticalmente */
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
 .cart-item img {
   width: 100%;
   max-width: 150px;
-  height: auto;
+  height: 150px;
   object-fit: contain;
   margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.cart-item:hover img {
+  transform: scale(1.1);
 }
 
 .cart-item p {
   margin: 5px 0;
+  color: #333;
 }
 
 .cart-item button {
   margin-top: 10px;
-  padding: 6px 10px;
-  background-color: #dc3545;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #dc3545, #a71d2a);
   border: none;
   color: white;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .cart-item button:hover {
-  background-color: #a71d2a;
+  background: linear-gradient(135deg, #a71d2a, #7a121a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .quantity-control {
   display: flex;
   align-items: center;
-  justify-content: center; /* centra los botones y cantidad */
+  justify-content: center;
   gap: 10px;
-  margin-top: auto; /* empuja hacia abajo dentro de la tarjeta */
+  margin-top: auto;
 }
 
 .quantity-control button {
-  width: 30px;
-  height: 30px;
-  background-color: #007bff;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   border: none;
   color: white;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .quantity-control button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 .quantity-control span {
-  min-width: 20px;
+  min-width: 24px;
   text-align: center;
+  font-weight: bold;
+  color: #333;
 }
-
 
 /* Responsive: 2 columnas en tablets */
 @media (max-width: 1024px) {
