@@ -21,10 +21,24 @@ export const CartProvider = ({ children }) => {
             alert(`Agregado a carrito`);}
             
         else {setCart([...cart,item]);
-                alert("${item.name} Agregado al carrito");}
+                alert(`${item.name} agregado al carrito`);
+;}
         }
     
-    
+    const decreaseItem = (id) => {
+    const updatedCart = cart.map((product) => {
+    if (product.id === id) {
+      if (product.quantity > 1) {
+        return { ...product, quantity: product.quantity - 1 }; // restar 1
+      } else {
+        return null; // lo eliminamos si queda 1
+      }
+    }
+    return product;
+  }).filter(Boolean); // eliminar los null
+  setCart(updatedCart);
+};
+
     const deleteItem = (id) => {
         const filtered = cart.filter((product) => product.id !== id);
         setCart(filtered);
@@ -41,5 +55,11 @@ export const CartProvider = ({ children }) => {
         const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
         return Math.round(total*100)/100;}
     
-    const values = { cart, addItem, deleteItem, clearCart, getTotalItems, total };
+        const checkout =() => {const ok = window.confirm("¿Desea finalizar la compra?");
+            if (ok) {alert("Gracias por su compra");
+                clearCart();
+            } else {alert("Puede seguir comprando");}
+        }
+    
+    const values = { cart, addItem, decreaseItem,deleteItem, clearCart, getTotalItems, total,checkout };
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>;}

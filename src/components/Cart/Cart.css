@@ -1,0 +1,120 @@
+/* Cart.css */
+
+.itemListContainer {
+  padding: 20px;
+}
+
+.total-pagar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.total-pagar h3 {
+  margin: 0;
+}
+
+.total-pagar .btn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.total-pagar .btn:hover {
+  background-color: #0056b3;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch; /* hace que las tarjetas tengan altura igual */
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribuye contenido verticalmente */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.cart-item img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.cart-item p {
+  margin: 5px 0;
+}
+
+.cart-item button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cart-item button:hover {
+  background-color: #a71d2a;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra los botones y cantidad */
+  gap: 10px;
+  margin-top: auto; /* empuja hacia abajo dentro de la tarjeta */
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quantity-control button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-control span {
+  min-width: 20px;
+  text-align: center;
+}
+
+
+/* Responsive: 2 columnas en tablets */
+@media (max-width: 1024px) {
+  .cart-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 columna en móviles */
+@media (max-width: 600px) {
+  .cart-items {
+    grid-template-columns: 1fr;
+  }
+}
