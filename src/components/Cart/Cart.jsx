@@ -13,7 +13,17 @@ export const Cart = () => {
             ) : (
                 <>
                     <div className="total-pagar">
-                        <h3>Total a pagar: ${total()}</h3>
+                        <h3>
+                        Total a pagar:{' '}
+                            <span>
+                            {`$${total().toLocaleString('es-AR', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                            })}`}
+                            </span>
+                        </h3>
+
+
                         <div>
                             <button className="btn" onClick={checkout}>Finalizar Compra</button>
                             <button className="btn" onClick={clearCart}>Vaciar Carrito</button>

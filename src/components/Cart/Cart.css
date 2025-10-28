@@ -1,4 +1,4 @@
-/* Cart.css - versión profesional */
+
 
 .itemListContainer {
   padding: 20px;
@@ -9,32 +9,47 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #f0f4ff, #dce4ff);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .total-pagar h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.6rem;
+  color: #002b80;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  letter-spacing: 0.5px;
 }
-
+.total-pagar h3 span {
+  color: #007bff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
 .total-pagar .btn {
   margin-left: 10px;
-  padding: 10px 16px;
+  padding: 12px 20px;
   cursor: pointer;
   background: linear-gradient(135deg, #007bff, #0056b3);
   border: none;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
 .total-pagar .btn:hover {
   background: linear-gradient(135deg, #0056b3, #003f7f);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
+
 
 .cart-items {
   display: grid;
