@@ -1,5 +1,6 @@
 import React from "react";
-import "productFormUI.css";
+import "./ProductFormUI.css";
+
 
 export const ProductFormUI = ({
   product,

@@ -34,7 +34,7 @@ export const Cart = () => {
                         {cart.map((item) => (
                             <div key={item.id} className="cart-item">
                                 {/* Aquí puedes agregar detalles del item */}
-                                <img src={item.image || item.imageUrl || ""} alt={item.name} />
+                                <img src={item.image || item.imageURL || ""} alt={item.name} />
                                 <p>{item.name}</p>
                                 <p>${item.price}</p>
                                 <p>Cantidad:{item.quantity}</p>
