@@ -10,7 +10,7 @@ export const ItemListContainer = ({ titulo }) => {
   const [error, setError] = useState(null); // 🔹 Para manejar errores
 
   useEffect(() => {
-    fetch("/data/products.json")
+    fetch("https://690a73ce1a446bb9cc2295d4.mockapi.io/products")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Hubo un problema al buscar productos");
