@@ -1,6 +1,7 @@
 import React from "react";
 import "./ProductFormUI.css";
 
+
 export const ProductFormUI = ({
   product,
   errors,
