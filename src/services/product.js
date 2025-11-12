@@ -13,3 +13,15 @@ const createProduct = async (product) => {
     return result;
 }
 export {createProduct}
+
+export const getProducts = async (category) => {
+    let url = BASE_URL;
+    if (category) {
+        url += `?category=${category}`;
+    }
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error("Error fetching products");
+    }
+    return await response.json();
+}
